@@ -1,6 +1,33 @@
 .header {
   display: flex;
-  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   width: 100%;
   align-items: flex-end;
+}
+
+.header__nav {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.header__logo,
+.header__link {
+  margin-right: $spacing-unit-md;
+  font-weight: 400;
+  font-size: $font-sm;
+  line-height: 3;
+}
+
+.header__link--active {
+  color: $color-accent;
+}
+.header__search {
+  display: block;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  height: 100%;
 }

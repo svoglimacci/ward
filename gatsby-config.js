@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-svg-sprite`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -15,7 +16,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-svg-sprite`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],

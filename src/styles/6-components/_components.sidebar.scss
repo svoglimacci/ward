@@ -1,0 +1,14 @@
+.sidebar {
+  width: 40%;
+  padding: 0 $spacing-unit-lg;
+  background-color: $color-primary;
+}
+.sidebar__section {
+  display: inline-block;
+  margin-right: $spacing-unit-xs;
+}
+.sidebar__list {
+  font-size: $font-sm;
+  list-style: none;
+  margin: 0;
+}

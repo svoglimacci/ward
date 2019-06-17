@@ -1,0 +1,46 @@
+///* ========================================================================
+//   #COLORS
+//   ======================================================================== */
+
+// Color palette
+$color-primary: #14151d;
+$color-primary-light: lighten($color-primary, 5%);
+$color-primary-dark: darken($color-primary, 5%);
+
+$color-accent: #4b92e3;
+$color-accent-light: lighten($color-accent, 5%);
+$color-accent-dark: darken($color-accent, 5%);
+
+$color-hover: #123123;
+$color-active: #123123;
+$colove-selected: #123123;
+$color-focus: #7348d5;
+
+// Shades
+$color-black: #101117;
+$color-gray: #55586b;
+$color-gray-dark: #0e0f14;
+$color-gray-light: rgb(207, 208, 214);
+$color-white: #cfd0d6;
+
+// Feedback
+$color-success: #41aa78;
+$color-error: #c8a528;
+$color-warning: #d84437;
+
+// Typography
+$color-text: #9da0b2;
+$color-text-heading: #cfd0d6;
+$color-text-subtle: #123123;
+$color-link: #9da0b2;
+$color-link-visited: #123123;
+
+// Buttons
+$btn-primary-bg: #14151d;
+$btn-primary-hover: #123123;
+$btn-primary-active: #123123;
+$btn-primary-active: #123123;
+
+// Icons
+$icon-primary: #62b8b8;
+$icon-secondary: #123123;

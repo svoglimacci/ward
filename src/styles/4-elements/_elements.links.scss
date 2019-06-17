@@ -1,11 +1,8 @@
 /* ==========================================================================
-   #LAYOUT
+   #LINKS
    ========================================================================== */
 
-.layout {
-  display: flex;
-  flex-direction: column;
-  padding: 0 $spacing-unit-lg;
-  width: 100%;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  color: $color-gray-light;
 }

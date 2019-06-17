@@ -35,12 +35,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
   return graphql(`
     {
       allMarkdownRemark {
         edges {
           node {
+            frontmatter {
+              order
+            }
             fields {
               slug
               topDir
@@ -52,9 +56,29 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      if (node.frontmatter.order === 1) {
+        const redirectBatch = [
+          {
+            from: `/${splitSlug(node.fields.slug)[0]}`,
+            to: node.fields.slug,
+          },
+          {
+            from: `/${splitSlug(node.fields.slug)[0]}/`,
+            to: node.fields.slug,
+          },
+        ];
+
+        redirectBatch.forEach(({ from, to }) => {
+          createRedirect({
+            fromPath: from,
+            redirectInBrowser: true,
+            toPath: to,
+          });
+        });
+      }
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/templates/Docs.jsx`),
+        component: path.resolve(`./src/templates/docs.jsx`),
         context: {
           slug: node.fields.slug,
           topDir: node.fields.topDir,

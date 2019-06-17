@@ -5,12 +5,10 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import createCategory from '../utils/createCategory';
-
+import Icon from '../components/Icon';
 class Docs extends React.PureComponent {
   render() {
     const { data, pathContext } = this.props;
-
-    const docContent = data.markdownRemark;
     const docCategory = createCategory(data.allMarkdownRemark.edges);
 
     const CategoryLinks = props => {
@@ -20,7 +18,12 @@ class Docs extends React.PureComponent {
             const linkList = props.category[category].map((link, i) => {
               return (
                 <li>
-                  <Link key={i} to={link.node.fields.slug}>
+                  <Link
+                    key={i}
+                    to={link.node.fields.slug}
+                    className="sidebar__link"
+                    activeClassName="sidebar__link--active"
+                  >
                     {link.node.frontmatter.title}
                   </Link>
                 </li>
@@ -29,8 +32,13 @@ class Docs extends React.PureComponent {
 
             return (
               <React.Fragment>
-                <h4 className="nav-section">{category}</h4>
-                <ul key={i}>{linkList}</ul>
+                <div>
+                  <h4 className="sidebar__section">{category}</h4>
+                  <Icon name="arrow" />
+                </div>
+                <ul className="sidebar__list" key={i}>
+                  {linkList}
+                </ul>
               </React.Fragment>
             );
           })}
@@ -38,27 +46,31 @@ class Docs extends React.PureComponent {
       );
     };
 
+    const post = data.markdownRemark;
     return (
-      <Layout>
+      <div className="wrapper">
         {Object.keys(docCategory).map((category, i) => {
           return (
             category === pathContext.topDir && (
               <Sidebar>
                 <div key={i}>
-                  <h3 className="nav-title">{category}</h3>
+                  <h3 className="sidebar__title">{category}</h3>
                   <CategoryLinks category={docCategory[category]} />
                 </div>
               </Sidebar>
             )
           );
         })}
-      </Layout>
+        <Layout>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Layout>
+      </div>
     );
   }
 }
 
 export const query = graphql`
-  query docContentQuery($slug: String!) {
+  query docsContentQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

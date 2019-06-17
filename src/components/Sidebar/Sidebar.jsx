@@ -2,8 +2,8 @@ import React from 'react';
 
 const Sidebar = ({ children }) => (
   <aside className="sidebar">
-    <header className="sidebar__head">
-      <a className="logo" href="/" title="Ward">
+    <header className="header">
+      <a className="header__logo" href="/" title="Ward">
         Ward
       </a>
     </header>

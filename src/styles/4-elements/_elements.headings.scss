@@ -3,25 +3,25 @@
    ========================================================================== */
 
 h1 {
-  font-size: 36px;
+  font-size: $font-xxl;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: $font-xl;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: $font-md;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: $font-sm;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: $font-xs;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: $font-xs;
 }
