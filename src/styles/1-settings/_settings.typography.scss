@@ -4,16 +4,14 @@
 
 //font-family
 $font-primary: 'Cooper Hewitt', sans-serif;
-
 $base-font-size: 1em;
 $base-line-height: 1.2;
 
 // Modular scale
 $font-ratio: 1.2;
-$font-xs: calc((1em / #{$font-ratio}) * #{$font-ratio});
-$font-sm: calc(#{$font-xs} * #{$font-ratio} * #{$font-ratio});
+$font-xs: calc((1em / #{$font-ratio}));
+$font-sm: calc(#{$font-xs} * #{$font-ratio});
 $font-md: calc(#{$font-sm} * #{$font-ratio});
 $font-lg: calc(#{$font-md} * #{$font-ratio});
 $font-xl: calc(#{$font-lg} * #{$font-ratio});
 $font-xxl: calc(#{$font-xl} * #{$font-ratio});
-

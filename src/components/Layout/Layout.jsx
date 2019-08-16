@@ -1,12 +1,12 @@
 import React from 'react';
-
 import Header from '../Header';
 
-const Layout = ({ children }) => (
-  <div className="layout">
-    <Header />
-    <main>{children}</main>
-  </div>
-);
+class Layout extends React.PureComponent {
+  render() {
+    const { children } = this.props;
+
+    return <>{children}</>;
+  }
+}
 
 export default Layout;

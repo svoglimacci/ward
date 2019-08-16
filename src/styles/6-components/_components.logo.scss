@@ -1,0 +1,23 @@
+.logo {
+  width: 200px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.placeholder {
+  background-image: url(../images/placeholder-icon.png);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: 0;
+}
+
+.search {
+  padding-left: 32px;
+  border: none;
+  width: 32px;
+}
+
+.search:focus {
+  width: 8rem;
+}

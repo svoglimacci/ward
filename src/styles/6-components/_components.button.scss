@@ -1,0 +1,19 @@
+.button {
+  @extend .placeholder;
+  width: auto;
+  min-height: 24px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-size: $font-md;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 32px;
+  padding-right: 0px;
+  line-height: 3;
+  background-color: transparent;
+}
+
+.button--active {
+  @extend .button;
+}

@@ -4,8 +4,11 @@
 
 .wrapper {
   display: flex;
+  flex-direction: column;
+  width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+}
+
+.content-wrapper {
+  padding: $spacing-unit-md $spacing-unit-md 0 $spacing-unit-md;
 }
