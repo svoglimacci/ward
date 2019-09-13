@@ -29,10 +29,12 @@ class ResponsiveSidebar extends React.Component {
         </div>
         <>
           <button
-            className="sidebar__toggle placeholder"
+            className="sidebar__toggle"
             onClick={this.openMenu}
             type="button"
-          />
+          >
+            Menu
+          </button>
         </>
       </>
     );

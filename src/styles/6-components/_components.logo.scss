@@ -6,13 +6,15 @@
 }
 
 .placeholder {
-  background-image: url(../images/placeholder-icon.png);
   background-repeat: no-repeat;
   background-size: 24px 24px;
   background-position: 0;
 }
 
 .search {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url('../images/search.svg');
   padding-left: 32px;
   border: none;
   width: 32px;
